@@ -1,5 +1,5 @@
 class ToolSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :price, :category_id, :tools
+  attributes :name, :price, :available, :details, :category_id
   belongs_to :category 
 end

@@ -32,7 +32,7 @@ private
 
 
     def tool_params
-        params.require(:tool).permit(:name, :price, :available, :details, :category_id)
+        params.require(:tool).permit(:name, :price, :available, :details)
     end
 
 

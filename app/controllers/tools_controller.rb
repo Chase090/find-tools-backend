@@ -7,7 +7,7 @@ class ToolsController < ApplicationController
     def update 
         tool = Tool.find(params[:id])
         if tool.update(tool_params)
-            render json: tool
+            render json: ToolSerializer.new(tool)
         else
             render json: {message: "could not process request."}
         end
@@ -22,13 +22,17 @@ class ToolsController < ApplicationController
         end
     end
 
+    def destroy
+        tool = Tool.find(params[:id])
+        tool.destroy
+    end
+
 
 private
 
-    def 
 
     def tool_params
-        params.require(:listing).permit(:name, :price, :available, :details, :category_id)
+        params.require(:tool).permit(:name, :price, :available, :details, :category_id)
     end
 
 

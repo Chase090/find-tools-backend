@@ -12,22 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_10_10_052543) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "tools", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "details"
-    t.boolean "available"
-    t.index ["category_id"], name: "index_tools_on_category_id"
+    t.boolean "available", default: true
   end
 
-  add_foreign_key "tools", "categories"
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_10_052543) do
+ActiveRecord::Schema.define(version: 2021_10_13_031025) do
 
   create_table "tools", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_052543) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "details"
     t.boolean "available", default: true
+    t.string "img_url"
   end
 
 end

@@ -15,7 +15,7 @@ class ToolsController < ApplicationController
 
     def create
         tool = Tool.new(tool_params)
-        if listing.save
+        if tool.save
             render json: ToolSerializer.new(tool)
         else
             render json: {error: "something went wrong."}
@@ -32,7 +32,7 @@ private
 
 
     def tool_params
-        params.require(:tool).permit(:name, :price, :available, :details)
+        params.require(:tool).permit(:name, :price, :available, :details, :img_url)
     end
 
 
